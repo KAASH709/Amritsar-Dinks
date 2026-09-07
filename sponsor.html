@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsor Us — Amritsar Dinks Padel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A2A38;
+    --court:#0F3A4D;
+    --court-light:#155268;
+    --chalk:#F2F6F5;
+    --line:#7FCBE0;
+    --amber:#F18431;
+    --coral:#F18431;
+    --muted:#8FB3C2;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--ink);
+    color:var(--chalk);
+    font-family:'Work Sans', sans-serif;
+    min-height:100vh;
+    padding:0 0 60px 0;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:0 20px;}
+
+  header{
+    position:relative;
+    padding:40px 20px 36px;
+    overflow:hidden;
+    border-bottom:1px solid rgba(242,239,230,0.12);
+  }
+  header::before{
+    content:"";
+    position:absolute;
+    top:-40%; right:-10%;
+    width:520px; height:520px;
+    border:1.5px solid rgba(127,203,224,0.14);
+    border-radius:50%;
+  }
+  header::after{
+    content:"";
+    position:absolute;
+    top:-30%; right:0%;
+    width:340px; height:340px;
+    border:1.5px solid rgba(127,203,224,0.1);
+    border-radius:50%;
+  }
+  .logo{
+    height:56px;
+    width:auto;
+    display:block;
+    margin-bottom:16px;
+    filter:drop-shadow(0 2px 6px rgba(0,0,0,0.35));
+  }
+  .logo-mark{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:52px;
+    height:52px;
+    margin-bottom:16px;
+    background:linear-gradient(135deg, var(--court-light), var(--court));
+    border:1.5px solid var(--amber);
+    border-radius:8px;
+    font-family:'Archivo', sans-serif;
+    font-weight:900;
+    font-size:20px;
+    letter-spacing:0.02em;
+    color:var(--amber);
+  }
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--line);
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Archivo', sans-serif;
+    font-weight:900;
+    font-size:clamp(30px, 5.5vw, 48px);
+    line-height:1.05;
+    letter-spacing:-0.01em;
+    max-width:640px;
+  }
+  .sub{
+    margin-top:14px;
+    color:var(--muted);
+    font-size:15px;
+    max-width:520px;
+    line-height:1.6;
+  }
+  .updated{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    color:var(--muted);
+    margin-top:22px;
+  }
+
+  /* NAV */
+  nav{
+    position:relative;
+    z-index:2;
+    display:flex;
+    gap:6px;
+    margin-top:26px;
+    flex-wrap:wrap;
+  }
+  nav a{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--muted);
+    padding:9px 16px;
+    border:1px solid rgba(242,239,230,0.18);
+    border-radius:3px;
+    transition:all 0.15s ease;
+  }
+  nav a:hover{color:var(--chalk); border-color:var(--line);}
+  nav a.active{
+    background:var(--line);
+    color:var(--ink);
+    border-color:var(--line);
+    font-weight:700;
+  }
+
+  /* LEADER CARD */
+  .leader{
+    margin:32px 20px 0;
+    background:linear-gradient(135deg, var(--court-light), var(--court));
+    border:1px solid rgba(227,178,60,0.35);
+    border-radius:4px;
+    padding:24px 26px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+  }
+  .leader-left{display:flex; align-items:baseline; gap:18px;}
+  .leader-rank{
+    font-family:'Space Mono', monospace;
+    font-weight:700;
+    font-size:13px;
+    color:var(--amber);
+    letter-spacing:0.1em;
+  }
+  .leader-name{
+    font-family:'Archivo', sans-serif;
+    font-weight:800;
+    font-size:26px;
+  }
+  .leader-pts{
+    font-family:'Space Mono', monospace;
+    font-weight:700;
+    font-size:28px;
+    color:var(--amber);
+  }
+  .leader-pts span{font-size:13px; color:var(--muted); font-weight:400; margin-left:6px;}
+
+  /* TABLE */
+  .board{margin:36px 20px 0;}
+  .board-head{
+    display:grid;
+    grid-template-columns:44px 1fr 90px 100px;
+    padding:0 14px 10px;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+    border-bottom:1px solid rgba(242,239,230,0.14);
+  }
+  .row{
+    display:grid;
+    grid-template-columns:44px 1fr 90px 100px;
+    align-items:center;
+    padding:14px;
+    border-bottom:1px solid rgba(242,239,230,0.07);
+    position:relative;
+  }
+  .row:hover{background:rgba(242,239,230,0.03);}
+  .rank-num{
+    font-family:'Space Mono', monospace;
+    font-weight:700;
+    font-size:17px;
+    color:var(--line);
+  }
+  .rank-num.top3{color:var(--amber);}
+  .player-cell{display:flex; flex-direction:column; gap:6px;}
+  .player-name{font-weight:600; font-size:16px;}
+  .bar-track{
+    height:4px;
+    background:rgba(242,239,230,0.09);
+    border-radius:2px;
+    width:100%;
+    max-width:280px;
+    overflow:hidden;
+  }
+  .bar-fill{
+    height:100%;
+    background:var(--line);
+    border-radius:2px;
+  }
+  .events-cell{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    color:var(--muted);
+    text-align:center;
+  }
+  .pts-cell{
+    font-family:'Space Mono', monospace;
+    font-weight:700;
+    font-size:17px;
+    text-align:right;
+  }
+
+  /* EVENT CARDS */
+  .events-list{margin:36px 20px 0; display:flex; flex-direction:column; gap:14px;}
+  .event-card{
+    background:var(--court);
+    border:1px solid rgba(242,239,230,0.1);
+    border-left:3px solid var(--amber);
+    border-radius:3px;
+    padding:20px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .event-signup{
+    flex-shrink:0;
+    background:var(--amber);
+    color:var(--ink);
+    font-family:'Space Mono', monospace;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:11px 20px;
+    border-radius:3px;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+    white-space:nowrap;
+  }
+  .event-signup:hover{
+    transform:translateY(-1px);
+    box-shadow:0 4px 12px rgba(241,132,49,0.35);
+  }
+  .event-info{flex:1; min-width:180px;}
+  .event-date{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin-bottom:8px;
+  }
+  .event-name{
+    font-family:'Archivo', sans-serif;
+    font-weight:800;
+    font-size:20px;
+    margin-bottom:6px;
+  }
+  .event-loc{color:var(--muted); font-size:14px;}
+
+  /* FORM PAGE */
+  .form-panel{
+    margin:36px 20px 0;
+    background:var(--court);
+    border:1px solid rgba(242,239,230,0.1);
+    border-radius:4px;
+    padding:28px;
+  }
+  .form-panel iframe{
+    width:100%;
+    min-height:900px;
+    border:none;
+    border-radius:3px;
+    background:var(--chalk);
+  }
+  .form-btn{
+    display:inline-block;
+    margin-top:16px;
+    background:var(--amber);
+    color:var(--ink);
+    font-weight:700;
+    font-family:'Work Sans', sans-serif;
+    font-size:14px;
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:3px;
+  }
+
+  footer{
+    margin:40px 20px 0;
+    padding-top:24px;
+    border-top:1px solid rgba(242,239,230,0.1);
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.7;
+  }
+  footer b{color:var(--chalk);}
+  .contact-row{margin-top:14px; display:flex; gap:22px; flex-wrap:wrap;}
+  .contact-row a{color:var(--line); text-decoration:none; font-family:'Space Mono', monospace; font-size:13px;}
+  .contact-row a:hover{text-decoration:underline;}
+
+  @media (max-width:520px){
+    .board-head, .row{grid-template-columns:32px 1fr 60px 70px; padding:12px 10px;}
+    .leader{flex-direction:column; align-items:flex-start; gap:14px;}
+    .bar-track{max-width:100%;}
+  }
+
+  .sponsor-panel{
+    margin:36px 20px 0;
+    background:linear-gradient(135deg, var(--court-light), var(--court));
+    border:1px solid rgba(227,178,60,0.35);
+    border-radius:5px;
+    padding:30px 28px;
+  }
+  .sponsor-panel p{
+    font-size:14px;
+    color:#E4EEEC;
+    line-height:1.7;
+    max-width:520px;
+  }
+  .sponsor-contacts{margin-top:24px; display:flex; flex-direction:column; gap:14px;}
+  .sponsor-contact-row{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    font-family:'Space Mono', monospace;
+  }
+  .sponsor-contact-row .who{font-weight:700; font-size:14px; color:var(--chalk); font-family:'Work Sans', sans-serif;}
+  .sponsor-contact-row a{color:var(--amber); font-size:15px; text-decoration:none; font-weight:700;}
+  .sponsor-contact-row a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo-mark">AD</div>
+    <div class="eyebrow">Amritsar Dinks &middot; Est. 2026</div>
+    <h1>SPONSOR US</h1>
+    <p class="sub">Interested in partnering with Amritsar's padel community? We'd love to talk.</p>
+    <nav><a href="index.html">Home</a><a href="events.html">Upcoming Events</a><a href="sponsor.html" class="active">Sponsor Us</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="sponsor-panel">
+    <p>Whether it's equipment, apparel, recovery &amp; wellness, or event sponsorship for our tournaments and Americano evenings &mdash; reach out directly and let's find the right fit.</p>
+    <div class="sponsor-contacts">
+      <div class="sponsor-contact-row">
+        <span class="who">Shrey Seth</span>
+        <a href="tel:+919880151879">+91-9880151879</a>
+      </div>
+      <div class="sponsor-contact-row">
+        <span class="who">Tushar Khanna</span>
+        <a href="tel:+919855389099">+91-9855389099</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
